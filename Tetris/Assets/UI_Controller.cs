@@ -52,16 +52,15 @@ public class UI_Controller : MonoBehaviour
             }
         }
     }*/
-
     }
-    public void click(){
+    public void startclick()
+    {
         Sprite_Renderer.sprite = SpriteTexture[1]; 
-    }
-    /*public void clickExit(){
+        Thread.Sleep(200);
         Sprite_Renderer.sprite = SpriteTexture[0];
         Thread.Sleep(150); 
         SceneManager.LoadScene("Scenes/SampleScene");
-    }*/
+    }
 }
     
     
