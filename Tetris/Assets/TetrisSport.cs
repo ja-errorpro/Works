@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
 
 public class TetrisSport : MonoBehaviour
 {
+    public Vector3 rotationPoint;
     private float previousTime;
-    public float falltime = 0.8f;
+    public float falltime = 1.2f;
     public static int height = 12;
     public static int width = 6;
     void Start()
@@ -18,21 +20,33 @@ public class TetrisSport : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.position += new Vector3 (-0.3f,0,0);
+            transform.position += new Vector3 (-0.6f,0,0);
+            if(!ValidMove())
+                transform.position -= new Vector3 (-0.6f,0,0);
         }
         else if(Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.position += new Vector3 (0.3f,0,0);
+            transform.position += new Vector3 (0.6f,0,0);
+            if(!ValidMove())
+                transform.position -= new Vector3 (0.6f,0,0);
+        }
+        else if(Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0,0,1), -90);
+            if(!ValidMove())
+                transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0,0,1), 90); 
         }
 
-        if(Time.time - previousTime > falltime)
+        if(Time.time - previousTime > (Input.GetKey(KeyCode.DownArrow) ? falltime / 10 :falltime))
         {
-            transform.position += new Vector3 (0,-0.3f,0);
+            transform.position += new Vector3 (0,-0.6f,0);
+            if(!ValidMove())
+                transform.position -= new Vector3 (0,-0.6f,0);
             previousTime = Time.time;
         }
     }
 
-    /*bool ValidMove()
+    bool ValidMove()
     {
         foreach(Transform children in transform)
         {
@@ -45,5 +59,5 @@ public class TetrisSport : MonoBehaviour
             }
         }
         return true;
-    }*/
+    }
 }
