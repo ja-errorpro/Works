@@ -39,7 +39,8 @@
      <Compile Include="Assets\LOGO.cs" />
      <Compile Include="Assets\Drop_blue.cs" />
      <Compile Include="Assets\UI_Controller.cs" />
-     <Compile Include="Assets\Tetris Block.cs" />
+     <Compile Include="Assets\Tetris_Block.cs" />
+     <Compile Include="Assets\TetrisSport.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
