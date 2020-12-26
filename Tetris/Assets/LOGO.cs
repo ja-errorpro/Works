@@ -16,8 +16,8 @@ public class LOGO : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
     {
-        transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0,0,1), -90);
-            Thread.Sleep(150);
+        transform.RotateAround(transform.TransformPoint(rotationPoint),new Vector3(0,0,1), 90);
+        
     }
     
 
