@@ -1,13 +1,15 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
 
 public class TetrisSport : MonoBehaviour
 {    
-    private float previousTime;
+    bool movable = true;
+    private float time = 0;
+    private float quickfalltime = 0.05f;
     public float falltime = 0.5f;
-    public static int height = 12;
+    public static float height = 12f;
     public static float width = 5.4f;
     public GameObject rig;
     void Start()
@@ -18,32 +20,44 @@ public class TetrisSport : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        if(movable)
         {
-            gameObject.transform.position += new Vector3 (-0.6f,0,0);
-            if(ValidMove() == false) 
-                gameObject.transform.position -= new Vector3 (-0.6f,0,0);
-        }
-        else if(Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            gameObject.transform.position += new Vector3 (0.6f,0,0);
-            if(ValidMove() == false)
-                gameObject.transform.position -= new Vector3 (0.6f,0,0);
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            //rotate !
-            rig.transform.eulerAngles += new Vector3(0,0,90);
-            if(ValidMove() == false)
-                rig.transform.eulerAngles -= new Vector3(0,0,90);
-        }
-
-        if(Time.time - previousTime > (Input.GetKey(KeyCode.DownArrow) ? falltime / 10 :falltime))
-        {
-            gameObject.transform.position += new Vector3 (0,-0.6f,0);
-            if(ValidMove() == false)
-                gameObject.transform.position -= new Vector3 (0,-0.6f,0);
-            previousTime = Time.time;
+            time += 1 * Time.deltaTime;
+            if(time > quickfalltime && Input.GetKey(KeyCode.DownArrow))
+            {
+                gameObject.transform.position += new Vector3 (0,-0.6f,0);
+                time = 0;
+                if(ValidMove() == false) 
+                    gameObject.transform.position -= new Vector3 (0,-0.6f,0);
+                Debug.Log(gameObject.transform.position);
+            }
+            else if(time > falltime)
+            {
+                gameObject.transform.position += new Vector3 (0,-0.6f,0);
+                time = 0;
+                if(ValidMove() == false) 
+                    gameObject.transform.position -= new Vector3 (0,-0.6f,0);
+                Debug.Log(gameObject.transform.position);
+            }
+            if(Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                gameObject.transform.position += new Vector3 (-0.6f,0,0);
+                if(ValidMove() == false) 
+                    gameObject.transform.position -= new Vector3 (-0.6f,0,0);
+            }
+            else if(Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                gameObject.transform.position += new Vector3 (0.6f,0,0);
+                if(ValidMove() == false)
+                    gameObject.transform.position -= new Vector3 (0.6f,0,0);
+            }
+            else if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                //rotate !
+                rig.transform.eulerAngles += new Vector3(0,0,90);
+                if(ValidMove() == false)
+                    rig.transform.eulerAngles -= new Vector3(0,0,90);
+            }
         }
     }
 
