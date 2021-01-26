@@ -6,8 +6,8 @@ using System.Threading;
 public class TetrisSport : MonoBehaviour
 {    
     bool movable = true;
-    private float time = 0;
-    private float quickfalltime = 0.05f;
+    public static float time = 0;
+    public static float quickfalltime = 0.05f;
     public float falltime = 0.5f;
     public static float height = 12f;
     public static float width = 5.4f;
@@ -33,10 +33,10 @@ public class TetrisSport : MonoBehaviour
             }
             else if(time > falltime)
             {
-                gameObject.transform.position += new Vector3 (0,-0.6f,0);
+                rig.transform.position += new Vector3 (0,-0.6f,0);
                 time = 0;
                 if(ValidMove() == false) 
-                    gameObject.transform.position -= new Vector3 (0,-0.6f,0);
+                    rig.transform.position -= new Vector3 (0,-0.6f,0);
                 //Debug.Log(gameObject.transform.position);
             }
             if(Input.GetKeyDown(KeyCode.LeftArrow))
