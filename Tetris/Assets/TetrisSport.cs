@@ -29,7 +29,7 @@ public class TetrisSport : MonoBehaviour
                 time = 0;
                 if(ValidMove() == false) 
                     gameObject.transform.position -= new Vector3 (0,-0.6f,0);
-                Debug.Log(gameObject.transform.position);
+                //Debug.Log(gameObject.transform.position);
             }
             else if(time > falltime)
             {
@@ -37,7 +37,7 @@ public class TetrisSport : MonoBehaviour
                 time = 0;
                 if(ValidMove() == false) 
                     gameObject.transform.position -= new Vector3 (0,-0.6f,0);
-                Debug.Log(gameObject.transform.position);
+                //Debug.Log(gameObject.transform.position);
             }
             if(Input.GetKeyDown(KeyCode.LeftArrow))
             {
@@ -69,6 +69,9 @@ public class TetrisSport : MonoBehaviour
                 subBlock.transform.position.x >= width ||
                 subBlock.transform.position.y < 0 )
             {
+                print(subBlock.name);
+                Debug.Log(subBlock.transform.position.x);
+                Debug.Log(subBlock.transform.position.y);
                 return false;
             }
         }
