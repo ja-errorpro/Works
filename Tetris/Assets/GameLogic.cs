@@ -7,10 +7,12 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     public static float quickfalltime = 0.05f;
     public static float falltime = 0.5f;
-    public static int height = 12;
-    public static int width = 6;
+    public static float height = 12f;
+    public static float width = 6f;
     public GameObject[] blocks;
-    //public Transform[,] grid = new Transform[width,height];
+    private static int heightOfInt = (int)height;
+    private static int widthOfInt = (int)width;
+    public Transform[,] grid = new Transform[widthOfInt,heightOfInt];
     void Start()
     {
         SpawnBlock();

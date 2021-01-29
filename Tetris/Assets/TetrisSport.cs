@@ -29,7 +29,7 @@ public class TetrisSport : MonoBehaviour
                 {
                     movable = false;
                     gameObject.transform.position -= new Vector3 (0,-0.6f,0);
-                   // RegisterBlock();
+                    RegisterBlock();
                     gameLogic.SpawnBlock();
                 }    
                 //Debug.Log(gameObject.transform.position);
@@ -42,7 +42,7 @@ public class TetrisSport : MonoBehaviour
                 {
                     movable = false;
                     gameObject.transform.position -= new Vector3 (0,-0.6f,0);
-                    //RegisterBlock();
+                    RegisterBlock();
                     gameLogic.SpawnBlock();
                 }    
                 //Debug.Log(gameObject.transform.position);
@@ -68,13 +68,13 @@ public class TetrisSport : MonoBehaviour
             }
         }
     }
-    /*void RegisterBlock()
+    void RegisterBlock()
     {
         foreach(Transform subBlock in rig.transform)
         {
             gameLogic.grid[Mathf.RoundToInt(subBlock.position.x), Mathf.RoundToInt(subBlock.position.y)] = subBlock;
         }
-    }*/
+    }
     bool ValidMove()
     {
         foreach(Transform subBlock in rig.transform)
@@ -88,10 +88,10 @@ public class TetrisSport : MonoBehaviour
                 Debug.Log(subBlock.transform.position.y);
                 return false;
             }
-            /*if(gameLogic.grid[Mathf.RoundToInt(subBlock.position.x), Mathf.RoundToInt(subBlock.position.y)] != null)
+            if(gameLogic.grid[Mathf.RoundToInt(subBlock.position.x), Mathf.RoundToInt(subBlock.position.y)] != null)
             {
                 return false;
-            }*/
+            }
         }
         return true;
     }
