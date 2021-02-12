@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -388,7 +389,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &483454350
 GameObject:
@@ -568,7 +569,7 @@ Transform:
   m_Children:
   - {fileID: 614060933}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &614060932
 GameObject:
@@ -874,6 +875,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &891776611
 Canvas:
   m_ObjectHideFlags: 0
@@ -948,12 +950,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocks:
-  - {fileID: 5668418955021510646, guid: af491c9c65993994da1adfc53233d351, type: 3}
-  - {fileID: 8776602496383782196, guid: b73b59ea3abd8af4c8dad018dc71294d, type: 3}
-  - {fileID: 1600588038110342121, guid: c6be1f1b7a3a7174bb70433a4338ee59, type: 3}
-  - {fileID: 3657425619005359684, guid: bef438883e7518f45945a37e17eca4db, type: 3}
-  - {fileID: 4808096112595405299, guid: 0f39bf3cc2e11de4d91837cf23584236, type: 3}
-  - {fileID: 8979508510369958819, guid: 6dacf9a1806df544f8a98b721ddf5da5, type: 3}
+  - {fileID: 7339082738017674784, guid: 0269baa7fdc3ffb4dbcb31cd5fc0cbc1, type: 3}
+  - {fileID: 48089718861973122, guid: e16deab9c0c1ec74a9fa11db7aed8390, type: 3}
+  - {fileID: 1044089698160213640, guid: ef67203ac9b855648a221afa6513bdcd, type: 3}
+  - {fileID: 5874509509398705593, guid: 427aab94d65c71842bdcccb86e576c11, type: 3}
+  - {fileID: 2081180109018019014, guid: a44a0f0bd75295b4b9edd5a6e714f834, type: 3}
+  - {fileID: 5985885688058859364, guid: 992c9e8a5eedd5843ba85d01c3c6cadb, type: 3}
 --- !u!4 &948239625
 Transform:
   m_ObjectHideFlags: 0
@@ -1020,6 +1022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1221,6 +1224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1340,6 +1344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1561,7 +1566,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1851320463
 GameObject:
