@@ -129,7 +129,7 @@ public class sport : MonoBehaviour
                 RowDown(i);
             }
         }
-        
+        ScoreComputing.GameData.all_deleted_lines += ScoreComputing.GameData.lines;
         Debug.Log(ScoreComputing.GameData.lines);
     }
 
