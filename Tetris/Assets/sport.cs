@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class sport : MonoBehaviour
 {
-     private float lastfall;
-     public float falltime = 0.4f;
+    private float lastfall;
+    public float falltime = 0.4f;
     void Start()
     {
         if(!isvalidgridpos())
@@ -20,8 +20,8 @@ public class sport : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            
             transform.position += new Vector3(-1, 0, 0);
-
             if(isvalidgridpos())
             {
                 updategrid();
@@ -33,8 +33,8 @@ public class sport : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            
             transform.position += new Vector3(1, 0, 0);
-
             if (isvalidgridpos())
             {
                 updategrid();
@@ -69,10 +69,7 @@ public class sport : MonoBehaviour
             {
                 transform.position += new Vector3(0, 1, 0);
 
-
-                CheckLine(); 
-                FindObjectOfType<GameLogic>().SpawnBlock();
-                enabled = false;
+                Invoke("DelayDown",(float)(0.35));
             }
 
             lastfall = Time.time;
@@ -162,6 +159,11 @@ public class sport : MonoBehaviour
             }
         }
     }
-
-
+    void DelayDown()
+    {
+        CheckLine();
+        enabled = false;
+        FindObjectOfType<GameLogic>().SpawnBlock();
+        CancelInvoke("DelayDown");
+    }
 }

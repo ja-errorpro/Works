@@ -337,6 +337,7 @@
 "Assets/Grid.cs"
 "Assets/ScaleCameraController.cs"
 "Assets/sport.cs"
+"Assets/TimeControl.cs"
 "Assets/UI_Controller.cs"
 -langversion:8.0
 
