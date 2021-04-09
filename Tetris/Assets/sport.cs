@@ -6,13 +6,16 @@ public class sport : MonoBehaviour
 {
      private float lastfall;
      public float falltime = 0.4f;
+    //private int line;
     void Start()
     {
+        //line = ScoreComputing.GameData.lines;
         if(!isvalidgridpos())
         {
             Debug.Log("Gameover");
             Destroy(gameObject);
         }
+        
     }
 
     
@@ -115,14 +118,19 @@ public class sport : MonoBehaviour
     }
     void CheckLine()
     {
+        ScoreComputing.GameData.lines = 0;
         for(int i = Grid.h - 1 ; i >= 0 ; i--)
         {
             if(HasLine(i))
             {
-                DeleteLine(i);
+               
+                DeleteLine(i); 
+                ScoreComputing.GameData.lines++;
                 RowDown(i);
             }
         }
+        
+        Debug.Log(ScoreComputing.GameData.lines);
     }
 
     bool HasLine(int i)
@@ -141,8 +149,10 @@ public class sport : MonoBehaviour
     {
         for(int j = 0 ; j < Grid.w ; j++)
         {
+            
             Destroy(Grid.grid[j, i].gameObject);
             Grid.grid[j, i] = null;
+            
         }
     }
 
