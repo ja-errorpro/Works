@@ -18,6 +18,7 @@ public class GameLogic : MonoBehaviour
     }
     public void SpawnBlock()
     {
+        ScoreComputing.Update();
         Instantiate(blocks[Random.Range(0,blocks.Length)], transform.position, Quaternion.identity);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class sport : MonoBehaviour
 {
     private float lastfall;
-    public float falltime = 0.4f;
+    public float falltime;
     void Start()
     {
         if(!isvalidgridpos())
@@ -14,10 +14,11 @@ public class sport : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     
     void Update()
     {
+        falltime -= ((float)RoundComputing.Round - 1) * 0.1f ;
+
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
             
@@ -60,7 +61,6 @@ public class sport : MonoBehaviour
         if (Time.time - lastfall > (Input.GetKey(KeyCode.DownArrow) ? falltime / 10 : falltime))
         {
             transform.position += new Vector3(0, -1, 0);
-            
             if (isvalidgridpos())
             {
                 updategrid();
@@ -69,9 +69,8 @@ public class sport : MonoBehaviour
             {
                 transform.position += new Vector3(0, 1, 0);
 
-                Invoke("DelayDown",(float)(0.35));
+                Invoke("DelayDown",0.35f);
             }
-
             lastfall = Time.time;
         }
     }
@@ -112,14 +111,18 @@ public class sport : MonoBehaviour
     }
     void CheckLine()
     {
+        ScoreComputing.ScoreData.lines = 0;
         for(int i = Grid.h - 1 ; i >= 0 ; i--)
         {
             if(HasLine(i))
             {
                 DeleteLine(i);
+                ScoreComputing.ScoreData.lines++;
                 RowDown(i);
             }
         }
+        ScoreComputing.ScoreData.all_deleted_lines += ScoreComputing.ScoreData.lines;
+       // Debug.Log(ScoreComputing.GameData.lines);
     }
 
     bool HasLine(int i)
@@ -161,8 +164,8 @@ public class sport : MonoBehaviour
     }
     void DelayDown()
     {
-        CheckLine();
         enabled = false;
+        CheckLine();
         FindObjectOfType<GameLogic>().SpawnBlock();
         CancelInvoke("DelayDown");
     }

@@ -5,22 +5,22 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637534894824053783
-    m_Hash: 2617617617
+      ticks: 637537024391678054
+    m_Hash: 670500812
   m_LockFileStatus:
     m_FilePath: "C:/Users/user/Dropbox/\u6211\u7684\u96FB\u8166 (LAPTOP-7UDQ3V86)/Desktop/Works/Tetris/Packages/packages-lock.json"
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637534894876517998
-    m_Hash: 1719296143
+      ticks: 637537024435236795
+    m_Hash: 718503049
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: "C:/Users/user/Dropbox/\u6211\u7684\u96FB\u8166 (LAPTOP-7UDQ3V86)/Desktop/Works/Tetris/Packages"
-m_EditorVersion: 2021.1.1f1 (6fdc41dfa55a)
+m_EditorVersion: 2021.1.2f1 (e5d502d80fbb)
 m_ResolvedPackages:
 - packageId: com.unity.2d.animation@5.0.3
   testable: 0
@@ -1146,12 +1146,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
-- packageId: com.unity.timeline@1.5.2
+- packageId: com.unity.timeline@1.5.4
   testable: 0
   isDirectDependency: 1
-  version: 1.5.2
+  version: 1.5.4
   source: 1
-  resolvedPath: "C:\\Users\\user\\Dropbox\\\u6211\u7684\u96FB\u8166 (LAPTOP-7UDQ3V86)\\Desktop\\Works\\Tetris\\Library\\PackageCache\\com.unity.timeline@1.5.2"
+  resolvedPath: "C:\\Users\\user\\Dropbox\\\u6211\u7684\u96FB\u8166 (LAPTOP-7UDQ3V86)\\Desktop\\Works\\Tetris\\Library\\PackageCache\\com.unity.timeline@1.5.4"
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -1226,7 +1226,6 @@ m_ResolvedPackages:
     - 1.6.0-pre.1
     - 1.6.0-pre.3
     compatible:
-    - 1.5.2
     - 1.5.4
     - 1.6.0-pre.1
     - 1.6.0-pre.3
@@ -1267,13 +1266,13 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637462521340000000
+  datePublishedTicks: 637510732040000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.timeline.git
-    revision: 7bdad7882133452ed8b2cd5bfca556726d3e7a64
+    revision: 7fe777cafcad93e7e44db6bd6a18ed5bd55e781a
     path: 
   unityLifecycle:
     version: 
