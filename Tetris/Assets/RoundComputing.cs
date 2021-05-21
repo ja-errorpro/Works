@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class RoundComputing : MonoBehaviour
 {
-    public int Round = 1;
+    public static int Round;
     public Text RoundText;
     // Start is called before the first frame update
     void Start()
     {
-        RoundText = GameObject.Find("Canvas/RoundText").GetComponent<Text>();
+        RoundText = GameObject.Find("Canvas/ContinueShow/RoundText").GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Round = TimeControl.minutes;
+        Round = TimeControl.minutes + 1;
         RoundText.text = "" + Round;
     }
 }

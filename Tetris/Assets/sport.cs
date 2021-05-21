@@ -6,6 +6,7 @@ public class sport : MonoBehaviour
 {
     private float lastfall;
     public float falltime;
+    public static bool CanMove = true;
     void Start()
     {
         if(!isvalidgridpos())
@@ -14,64 +15,66 @@ public class sport : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
     void Update()
     {
-        falltime -= ((float)RoundComputing.Round - 1) * 0.1f ;
+        if(CanMove == true)
+        {
+            falltime = 0.4f / (RoundComputing.Round);
 
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
-        {
+            if(Input.GetKeyDown(KeyCode.LeftArrow))
+            {
             
-            transform.position += new Vector3(-1, 0, 0);
-            if(isvalidgridpos())
-            {
-                updategrid();
-            }
-            else
-            {
-                transform.position += new Vector3(1, 0, 0);
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            
-            transform.position += new Vector3(1, 0, 0);
-            if (isvalidgridpos())
-            {
-                updategrid();
-            }
-            else
-            {
                 transform.position += new Vector3(-1, 0, 0);
+                if(isvalidgridpos())
+                {
+                    updategrid();
+                }
+                else
+                {
+                    transform.position += new Vector3(1, 0, 0);
+                }
             }
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            transform.Rotate(0, 0, -90);
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
 
-            if (isvalidgridpos())
-            {
-                updategrid();
+                transform.position += new Vector3(1, 0, 0);
+                if (isvalidgridpos())
+                {
+                    updategrid();
+                }
+                else
+                {
+                    transform.position += new Vector3(-1, 0, 0);
+                }
             }
-            else
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                transform.Rotate(0, 0, 90);
-            }
-        }
-        if (Time.time - lastfall > (Input.GetKey(KeyCode.DownArrow) ? falltime / 10 : falltime))
-        {
-            transform.position += new Vector3(0, -1, 0);
-            if (isvalidgridpos())
-            {
-                updategrid();
-            }
-            else
-            {
-                transform.position += new Vector3(0, 1, 0);
+                transform.Rotate(0, 0, -90);
 
-                Invoke("DelayDown",0.35f);
+                if (isvalidgridpos())
+                {
+                    updategrid();
+                }
+                else
+               {
+                    transform.Rotate(0, 0, 90);
+                }
             }
-            lastfall = Time.time;
+            if (Time.time - lastfall > (Input.GetKey(KeyCode.DownArrow) ? falltime / 10 : falltime))
+            {
+                transform.position += new Vector3(0, -1, 0);
+                if (isvalidgridpos())
+                {
+                    updategrid();
+                }
+                else
+                {
+                    transform.position += new Vector3(0, 1, 0);
+
+                    Invoke("DelayDown",0.2f);
+                }
+                lastfall = Time.time;
+            }
         }
     }
 

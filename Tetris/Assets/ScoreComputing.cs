@@ -16,7 +16,7 @@ public class ScoreComputing : MonoBehaviour
     }
     void Start()
     {
-        ScoreData.ScoreText = GameObject.Find("Canvas/ScoreText").GetComponent<Text>();
+        ScoreData.ScoreText = GameObject.Find("Canvas/ContinueShow/ScoreText").GetComponent<Text>();
     }
 
     public static void Update()
