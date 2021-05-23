@@ -7,9 +7,11 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class UI_Controller : MonoBehaviour
 {
-    public GameObject outgameMenu;
-    public GameObject PlayingGameObject;
-    public GameObject ingameMenu;
+    public GameObject PauseMenu;
+    public GameObject PlayingobjectMenu;
+    public GameObject PlayingUIMenu;
+    public GameObject GameoverMenu;
+    public static bool ifGameover = false;
     void Start()
     {
         
@@ -17,6 +19,7 @@ public class UI_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        OnGameover();
     }
     public void click()
     {
@@ -25,18 +28,20 @@ public class UI_Controller : MonoBehaviour
     public void OnPause()//Stop
     {
         Time.timeScale = 0;
-        outgameMenu.SetActive(true);
-        PlayingGameObject.SetActive(false);
-        ingameMenu.SetActive(false);
+        PauseMenu.SetActive(true);
+        PlayingobjectMenu.SetActive(false);
+        PlayingUIMenu.SetActive(false);
+        GameoverMenu.SetActive(false);
         sport.CanMove = false;
     }
 
     public void OnResume()//Continue
     {
         Time.timeScale = 1f;
-        outgameMenu.SetActive(false);
-        PlayingGameObject.SetActive(true);
-        ingameMenu.SetActive(true);
+        PauseMenu.SetActive(false);
+        PlayingobjectMenu.SetActive(true);
+        PlayingUIMenu.SetActive(true);
+        GameoverMenu.SetActive(false);
         sport.CanMove = true;
     }
 
@@ -44,8 +49,22 @@ public class UI_Controller : MonoBehaviour
     {
         //Loading SampleScene
         SceneManager.LoadScene("Scenes/SampleScene");
+        Debug.Log("Reatart");
         Time.timeScale = 1f;
         sport.CanMove = true;
+    }
+    public void OnGameover()//Gameover
+    {
+        if(ifGameover == true)
+        {
+            Debug.Log("GameOver");
+            Time.timeScale = 0;
+            PauseMenu.SetActive(false);
+            PlayingobjectMenu.SetActive(false);
+            PlayingUIMenu.SetActive(false);
+            GameoverMenu.SetActive(true);
+            ifGameover = false;
+        }
     }
     public void PressLeft()
     {
@@ -67,6 +86,14 @@ public class UI_Controller : MonoBehaviour
         {
             sport.Upclick = true;
         }
+    }
+    public void DownclickTrue()
+    {
+        sport.Downclick = true;
+    }
+    public void DownclickFalse()
+    {
+        sport.Downclick = false;
     }
 }
     

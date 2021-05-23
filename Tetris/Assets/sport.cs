@@ -15,8 +15,8 @@ public class sport : MonoBehaviour
     {
         if(!isvalidgridpos())
         {
-            Debug.Log("Gameover");
-            Destroy(gameObject);
+            UI_Controller.ifGameover = true;
+            CanMove = false;
         }
     }
     void Update()

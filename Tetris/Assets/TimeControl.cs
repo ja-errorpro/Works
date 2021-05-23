@@ -11,7 +11,7 @@ public class TimeControl : MonoBehaviour
 	    public static int minutes ;
         public Text TimeText;
     void Start(){
-	    TimeText = GameObject.Find("Canvas/ContinueShow/Text").GetComponent<Text>();
+	    TimeText = GameObject.Find("Canvas/PlayingUIShow/TimeText").GetComponent<Text>();
 	    startTime = Time.time;
 
     }

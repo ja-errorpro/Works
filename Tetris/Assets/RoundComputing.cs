@@ -10,7 +10,7 @@ public class RoundComputing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RoundText = GameObject.Find("Canvas/ContinueShow/RoundText").GetComponent<Text>();
+        RoundText = GameObject.Find("Canvas/PlayingUIShow/RoundText").GetComponent<Text>();
     }
 
     // Update is called once per frame
