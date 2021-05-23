@@ -7,6 +7,10 @@ public class sport : MonoBehaviour
     private float lastfall;
     public float falltime;
     public static bool CanMove = true;
+    public static bool Leftclick = false;
+    public static bool Rightclick = false;
+    public static bool Upclick = false;
+    public static bool Downclick = false;
     void Start()
     {
         if(!isvalidgridpos())
@@ -21,7 +25,7 @@ public class sport : MonoBehaviour
         {
             falltime = 0.4f / (RoundComputing.Round);
 
-            if(Input.GetKeyDown(KeyCode.LeftArrow))
+            if(Input.GetKeyDown(KeyCode.LeftArrow) || Leftclick == true)
             {
             
                 transform.position += new Vector3(-1, 0, 0);
@@ -33,8 +37,9 @@ public class sport : MonoBehaviour
                 {
                     transform.position += new Vector3(1, 0, 0);
                 }
+                Leftclick = false;
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetKeyDown(KeyCode.RightArrow) || Rightclick == true)
             {
 
                 transform.position += new Vector3(1, 0, 0);
@@ -46,8 +51,9 @@ public class sport : MonoBehaviour
                 {
                     transform.position += new Vector3(-1, 0, 0);
                 }
+                Rightclick = false;
             }
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Upclick == true)
             {
                 transform.Rotate(0, 0, -90);
 
@@ -59,8 +65,9 @@ public class sport : MonoBehaviour
                {
                     transform.Rotate(0, 0, 90);
                 }
+                Upclick = false;
             }
-            if (Time.time - lastfall > (Input.GetKey(KeyCode.DownArrow) ? falltime / 10 : falltime))
+            if (Time.time - lastfall > ((Input.GetKey(KeyCode.DownArrow) || Downclick == true) ? falltime / 10 : falltime))
             {
                 transform.position += new Vector3(0, -1, 0);
                 if (isvalidgridpos())
@@ -171,5 +178,20 @@ public class sport : MonoBehaviour
         CheckLine();
         FindObjectOfType<GameLogic>().SpawnBlock();
         CancelInvoke("DelayDown");
+    }
+    void PressLeft()
+    {
+        if(CanMove == true)
+        {
+            transform.position += new Vector3(-1, 0, 0);
+            if(isvalidgridpos())
+            {
+                updategrid();
+            }
+            else
+            {
+                transform.position += new Vector3(1, 0, 0);
+            }
+        }
     }
 }

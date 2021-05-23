@@ -17,7 +17,6 @@ public class UI_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
     }
     public void click()
     {
@@ -47,6 +46,27 @@ public class UI_Controller : MonoBehaviour
         SceneManager.LoadScene("Scenes/SampleScene");
         Time.timeScale = 1f;
         sport.CanMove = true;
+    }
+    public void PressLeft()
+    {
+        if(sport.CanMove == true)
+        {
+            sport.Leftclick = true;
+        }
+    }
+    public void PressRight()
+    {
+        if(sport.CanMove == true)
+        {
+            sport.Rightclick = true;
+        }
+    }
+    public void PressUp()
+    {
+        if(sport.CanMove == true)
+        {
+            sport.Upclick = true;
+        }
     }
 }
     
