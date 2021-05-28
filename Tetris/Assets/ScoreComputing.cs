@@ -10,18 +10,18 @@ public class ScoreComputing : MonoBehaviour
     {
 
         public static int lines=0;
-        public static int all_deleted_lines = 0;
+        public static int all_deleted_lines = 0; // 紀錄已刪除行數
         public static int Score = 0;
         public static Text ScoreText;
     }
     void Start()
     {
-        ScoreData.ScoreText = GameObject.Find("Canvas/PlayingUIShow/ScoreText").GetComponent<Text>();
+        ScoreData.ScoreText = GameObject.Find("Canvas/PlayingUIShow/ScoreText").GetComponent<Text>(); // 尋找顯示之UI Text 
     }
 
     public static void Update()
     {
-        if (ScoreData.lines == 1)
+        if (ScoreData.lines == 1) // 依據消除行數計分
         {
             ScoreData.Score += ScoreData.lines * 10;
             ScoreData.ScoreText.text = "" + ScoreData.Score;

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Grid : MonoBehaviour
 {
-    public static int w = 10;
+    public static int w = 10; // 方塊邊界
     public static int h = 23;
 
-    public static Transform[,] grid = new Transform[w,h];
+    public static Transform[,] grid = new Transform[w,h]; // 紀錄方塊位置之矩陣
     
     public static Vector2 roundvec2(Vector2 v)
     {
@@ -24,7 +24,7 @@ public class Grid : MonoBehaviour
         
     }
 
-    public static bool insideborder(Vector2 pos)
+    public static bool insideborder(Vector2 pos) // 是否越界
     {
         return ((int)pos.x >= 0 && (int)pos.x < w && (int)pos.y >= 0);
     }
