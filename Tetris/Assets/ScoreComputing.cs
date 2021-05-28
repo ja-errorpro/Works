@@ -33,12 +33,12 @@ public class ScoreComputing : MonoBehaviour
         }
         else if (ScoreData.lines == 3)
         {
-            ScoreData.Score += ScoreData.lines * 10;
+            ScoreData.Score += ScoreData.lines * 15;
             ScoreData.ScoreText.text = "" + ScoreData.Score;
         }
         else if (ScoreData.lines >= 4)
         {
-            ScoreData.Score += ScoreData.lines * 10;
+            ScoreData.Score += ScoreData.lines * 20;
             ScoreData.ScoreText.text = "" + ScoreData.Score;
         }
     }

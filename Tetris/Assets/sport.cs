@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class sport : MonoBehaviour
 {
+    public Vector3 rotationPoint; //決定旋轉點，避免方塊出現旋轉之情形
     private float lastfall;
     public float falltime; // 掉落速度
     public static bool CanMove = true; // 是否可移動
@@ -55,7 +56,7 @@ public class sport : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.UpArrow) || Upclick == true)// Rotate 
             {
-                transform.Rotate(0, 0, -90);
+                transform.RotateAround(transform.TransformPoint(rotationPoint) , new Vector3(0,0,1) , 90);
 
                 if (isvalidgridpos())// 判定是否在界內
                 {
@@ -63,7 +64,7 @@ public class sport : MonoBehaviour
                 }
                 else
                {
-                    transform.Rotate(0, 0, 90);// 否 ， 執行反操作
+                    transform.RotateAround(transform.TransformPoint(rotationPoint) , new Vector3(0,0,1) , -90);// 否 ， 執行反操作
                 }
                 Upclick = false;// 按下上按鈕後只執行一次移動。
             }
@@ -177,6 +178,8 @@ public class sport : MonoBehaviour
         enabled = false; // 不可進行操作
         CheckLine(); // 檢查
         FindObjectOfType<GameLogic>().SpawnBlock(); // 隨機生成方塊
+        FindObjectOfType<prestop>().stop(); // 隨機生成方塊
+        FindObjectOfType<presprot>().SpawnBlock(); // 隨機生成方塊
         CancelInvoke("DelayDown"); // 結束延遲
     }
 }
