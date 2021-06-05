@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class ScaleCameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float aspectRatio = 9f / 16f;
+    public float aspectRatio = 9f / 16f; // 螢幕比例
     void Start()
     {
-        Camera cam = GetComponent<Camera> ();
+        Camera cam = GetComponent<Camera>();
         //裝置螢幕的長寬比
         float screenRatio = (float)Screen.width / (float)Screen.height;
 
