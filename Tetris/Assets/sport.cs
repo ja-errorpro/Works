@@ -179,7 +179,7 @@ public class sport : MonoBehaviour
         CheckLine(); // 檢查
         FindObjectOfType<GameLogic>().SpawnBlock(); // 隨機生成方塊
         FindObjectOfType<prestop>().stop(); // 隨機生成方塊
-        FindObjectOfType<presprot>().PreSpawnBlock(); // 隨機生成方塊
+        FindObjectOfType<presport>().PreSpawnBlock(); // 隨機生成方塊
         CancelInvoke("DelayDown"); // 結束延遲
     }
 }
