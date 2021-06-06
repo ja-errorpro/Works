@@ -8,7 +8,7 @@ public class GameLogic : MonoBehaviour
     public GameObject[] blocks;
     void Start()
     {
-        Instantiate(blocks[Random.Range(0, blocks.Length)], transform.position, Quaternion.identity);
+        SpawnBlock();
     }
 
     // Update is called once per frame

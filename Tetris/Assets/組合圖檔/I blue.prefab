@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86577d9863dbbb84ea9e6bf750fdacc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPoint: {x: 0, y: 0.5, z: 0}
+  rotationPoint: {x: 0, y: 0, z: 0}
   falltime: 0.4
 --- !u!212 &6342452485846378761
 SpriteRenderer:

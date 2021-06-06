@@ -9,7 +9,7 @@ public class presprot : MonoBehaviour
     public static int i;
     void Start()
     {
-        SpawnBlock();
+        PreSpawnBlock(); // 隨機生成新方塊
     }
 
     // Update is called once per frame
@@ -17,10 +17,10 @@ public class presprot : MonoBehaviour
     {
         
     }
-    public void SpawnBlock()
+    public void PreSpawnBlock()
     {
         i= Random.Range(0, preblocks.Length);
-        Instantiate(preblocks[i], transform.position, Quaternion.identity);
+        Instantiate(preblocks[i], transform.position, Quaternion.identity); // 將方塊生成至需要的位置
     }
 
 }
