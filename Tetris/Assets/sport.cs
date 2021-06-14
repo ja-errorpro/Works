@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class sport : MonoBehaviour
 {
+<<<<<<< HEAD
     public Vector3 rotationPoint; //決定旋轉點，避免方塊出現旋轉之情形
     private float lastfall;
     public float falltime; // 掉落速度
@@ -15,10 +16,20 @@ public class sport : MonoBehaviour
     void Start()
     {
         if(!isvalidgridpos()) // 方塊生成後，是否於界內
+=======
+     private float lastfall;
+     public float falltime = 0.4f;
+    //private int line;
+    void Start()
+    {
+        //line = ScoreComputing.GameData.lines;
+        if(!isvalidgridpos())
+>>>>>>> a9b4de8e48df11627b822bb16c2f1fd9368bd724
         {
             UI_Controller.ifGameover = true; // 是，執行GameOver
             CanMove = false; // 結束操作
         }
+        
     }
     void Update()
     {
@@ -122,11 +133,16 @@ public class sport : MonoBehaviour
     }
     void CheckLine() // 逐行檢查，進行計分
     {
+<<<<<<< HEAD
         ScoreComputing.ScoreData.lines = 0;
+=======
+        ScoreComputing.GameData.lines = 0;
+>>>>>>> a9b4de8e48df11627b822bb16c2f1fd9368bd724
         for(int i = Grid.h - 1 ; i >= 0 ; i--)
         {
             if(HasLine(i))
             {
+<<<<<<< HEAD
                 DeleteLine(i);
                 ScoreComputing.ScoreData.lines++;
                 RowDown(i);
@@ -134,6 +150,16 @@ public class sport : MonoBehaviour
         }
         ScoreComputing.ScoreData.all_deleted_lines += ScoreComputing.ScoreData.lines;
        // Debug.Log(ScoreComputing.GameData.lines);
+=======
+               
+                DeleteLine(i); 
+                ScoreComputing.GameData.lines++;
+                RowDown(i);
+            }
+        }
+        ScoreComputing.GameData.all_deleted_lines += ScoreComputing.GameData.lines;
+        Debug.Log(ScoreComputing.GameData.lines);
+>>>>>>> a9b4de8e48df11627b822bb16c2f1fd9368bd724
     }
 
     bool HasLine(int i) // 逐行檢查是否有滿行，回傳
@@ -152,8 +178,10 @@ public class sport : MonoBehaviour
     {
         for(int j = 0 ; j < Grid.w ; j++)
         {
+            
             Destroy(Grid.grid[j, i].gameObject);
             Grid.grid[j, i] = null;
+            
         }
     }
 
