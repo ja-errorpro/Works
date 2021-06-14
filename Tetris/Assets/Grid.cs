@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Grid : MonoBehaviour
 {
-    public static int w = 10; // 方塊邊界
+    public static int w = 10; // 設定方塊邊界
     public static int h = 23;
 
     public static Transform[,] grid = new Transform[w,h]; // 紀錄方塊位置之矩陣
