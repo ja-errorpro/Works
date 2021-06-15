@@ -6,12 +6,17 @@ m_ProjectFiles:
     m_ModificationDate:
       serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
       ticks: 637578001407177491
     m_Hash: 817896761
 =======
       ticks: 637534953287883331
     m_Hash: 3108064557
 >>>>>>> a9b4de8e48df11627b822bb16c2f1fd9368bd724
+=======
+      ticks: 637592767588589272
+    m_Hash: 3351523702
+>>>>>>> 7b8e52986e07a9275a32f24facecbcbedb7e67fc
   m_LockFileStatus:
     m_FilePath: C:/Users/ija/Desktop/Works/Tetris/Packages/packages-lock.json
     m_PathExists: 1
@@ -19,12 +24,17 @@ m_ProjectFiles:
     m_ModificationDate:
       serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
       ticks: 637578001407376944
     m_Hash: 213351214
 =======
       ticks: 637534953287893301
     m_Hash: 1781967874
 >>>>>>> a9b4de8e48df11627b822bb16c2f1fd9368bd724
+=======
+      ticks: 637592767588599245
+    m_Hash: 168567236
+>>>>>>> 7b8e52986e07a9275a32f24facecbcbedb7e67fc
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
