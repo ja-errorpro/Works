@@ -6,10 +6,13 @@ public class presport : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject[] preblocks;
-    public static int i;
+    public static int first;
+    public static int later;
+    public static int i = 1;
     void Start()
     {
-        PreSpawnBlock(); // 隨機生成新方塊至"下一個"的位置   
+        later = Random.Range(0, preblocks.Length);//儲存生成方塊的編號
+        PreSpawnBlock(); // 隨機生成新方塊至"下一個"的位置
     }
 
     // Update is called once per frame
@@ -19,8 +22,10 @@ public class presport : MonoBehaviour
     }
     public void PreSpawnBlock()
     {
-        i= Random.Range(0, preblocks.Length);//儲存生成方塊的編號
-        Instantiate(preblocks[i], transform.position, Quaternion.identity); // 將方塊生成至需要的位置
+            first= Random.Range(0, preblocks.Length);//儲存生成方塊的編號
+            Instantiate(preblocks[first], transform.position, Quaternion.identity); // 將方塊生成至需要的位置 
+        
+        
     }
 
 }
