@@ -6,6 +6,7 @@ public class GameLogic : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject[] blocks;
+    
     void Start()
     {
         SpawnBlock();
@@ -18,6 +19,7 @@ public class GameLogic : MonoBehaviour
     }
     public void SpawnBlock()
     {
+<<<<<<< HEAD
         if(presport.i==1)
         {
             Instantiate(blocks[presport.later], transform.position, Quaternion.identity); // 將方塊生成至需要的位置 
@@ -29,5 +31,14 @@ public class GameLogic : MonoBehaviour
             Instantiate(blocks[presport.first], transform.position, Quaternion.identity);//於指定位置生成於"下一個"出現的方塊
         }
         
+=======
+        ScoreComputing.Update();
+<<<<<<< HEAD
+        Instantiate(blocks[presport.i], transform.position, Quaternion.identity);//於指定位置生成於"下一個"出現的方塊
+=======
+        Instantiate(blocks[Random.Range(0,blocks.Length)], transform.position, Quaternion.identity);
+>>>>>>> a9b4de8e48df11627b822bb16c2f1fd9368bd724
+>>>>>>> a78af7bb8c0076ad15a29bdd95f9694e43eb1420
     }
+    
 }
