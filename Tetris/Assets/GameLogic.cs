@@ -18,7 +18,15 @@ public class GameLogic : MonoBehaviour
     }
     public void SpawnBlock()
     {
-        ScoreComputing.Update();
-        Instantiate(blocks[presport.i], transform.position, Quaternion.identity);//於指定位置生成於"下一個"出現的方塊
+        if(presport.i == 1)
+        {
+            Instantiate(blocks[presport.later], transform.position, Quaternion.identity); // 將方塊生成至需要的位置 
+            presport.i++;
+        }
+        else
+        {
+            ScoreComputing.Update();
+            Instantiate(blocks[presport.first], transform.position, Quaternion.identity);//於指定位置生成於"下一個"出現的方塊
+        }
     }
 }

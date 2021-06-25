@@ -79,7 +79,7 @@ public class sport : MonoBehaviour
                 {
                     transform.position += new Vector3(0, 1, 0);// 否 ， 執行反操作
 
-                    Invoke("DelayDown",0.2f); // 落地時 ， 延遲可繼續操作
+                    Invoke("DelayDown",0.05f); // 落地時 ， 延遲可繼續操作
                 }
                 lastfall = Time.time; // 更新
             }
