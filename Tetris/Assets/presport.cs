@@ -7,10 +7,11 @@ public class presport : MonoBehaviour
     // Start is called before the first frame update
     public GameObject[] preblocks;
     public static int first;
-    public static int i = 1;
+    public static int i;
     public static int later;
     void Start()
     {
+        i = 1;
         later = Random.Range(0, preblocks.Length);//儲存生成方塊的編號
         PreSpawnBlock(); // 隨機生成新方塊至"下一個"的位置
     }
